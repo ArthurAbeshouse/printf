@@ -1,6 +1,9 @@
-# Printf
+#Printf
+## Synopsis
 
 First Holberton group project to attempt to recreate and add additional functions to the stdout printing function "printf" in c.
+
+## Code Examples
 
 ``c
 _printf(); /* New function that'll be created */
@@ -28,3 +31,7 @@ _printf(); /* New function that'll be created */
 - 14
 - 15-
 - 16-`
+
+## Contributors
+Arthur Abeshouse
+Ezra Nobrega
