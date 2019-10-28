@@ -16,7 +16,9 @@ int _putchar(char c);
 int (*get_spec_func(char speec))(va_list);
 int print_number(int args);
 int print_char(va_list c);
+int print_binary(va_list arg);
 int print_string(va_list s);
+int print_lil_hex(va_list n);
 int _printf(const char *format, ...);
 
 #endif
