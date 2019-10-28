@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ * reverse_string - reverses a string
+ * @s: String to reverse
+ * Return: Never
+ */
 
 int reverse_string(va_list n)
 {
