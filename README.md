@@ -1,25 +1,24 @@
-# Printf
-
+#Printf
 ## Synopsis
 
 First Holberton group project to attempt to recreate and add additional functions to the stdout printing function "printf" in c.
 
 ## Code Examples
+
 ``c
 _printf(); /* New function that'll be created */
 ``
 
 
 
-## Tasks
+## Objectives
 
 - 0-
-- 1
-- 2
+- 1-
+- 2-
 - 3-unsigned_to_binary.c
 - 4-conversion_handling.c
 - 5-buffer.c
-
 - 6-S_conversion
 - 7-
 - 8-
@@ -30,7 +29,7 @@ _printf(); /* New function that'll be created */
 - 13-
 - 14
 - 15-
-- 16-`
+- 16-everything works
 
 ## Contributors
 Arthur Abeshouse
