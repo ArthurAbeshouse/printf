@@ -1,26 +1,24 @@
 #include "holberton.h"
 
-int print_binary(va_list arg)
+int print_binary(va_list bi)
 {
-	unsigned int numToConvert;
-	numToConvert = va_arg(arg, unsigned int);
+	int a = 0, b = 0, num, arr[48];
+	num = va_arg(bi, int);
 
-    long result = 0, num_printed;
-    unsigned int remainder; 
-	int i = 1;
-    while (numToConvert != 0)
-    {
-	        remainder = numToConvert % 2;
-	       	numToConvert /= 2;
-	        result += remainder*i;
-			num_printed++;
-			i *= 10;	
-
+	while (num > 0)
+	{
+		arr[a] = num % 2;
+		num = num/2;
+		a++;
 	}
-	return (num_printed);
+	for (int b = a - 1; b >= 0; b--)
+		_putchar('0' + arr[b]);
+	_putchar('0' + arr[b]);
+	return(b);
 }
 
-int print_lil_hex(va_list arg)
+/*int print_lil_hex(va_list arg)
+
 {
 	int numToConvert;
 	numToConvert = va_arg(arg, unsigned int);
@@ -50,6 +48,4 @@ int print_lil_hex(va_list arg)
 		_putchar(arrayHex[j]);
 		count++;
 	}
-}
-
-
+}*/
