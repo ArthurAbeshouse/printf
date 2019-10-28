@@ -18,5 +18,7 @@ int print_number(int args);
 int print_char(va_list c);
 int print_string(va_list s);
 int _printf(const char *format, ...);
+void _puts(char *str);
+int print_reverse(va_list n);
 
 #endif
