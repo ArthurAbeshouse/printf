@@ -23,7 +23,7 @@ int _printf(const char *format, ...);
 void _puts(char *str);
 int print_lil_hex(va_list arg);
 int print_big_hex(va_list arg);
-int print_reverse(va_list n);
+int print_reverse(va_list arg);
 int print_unsigned(va_list arg);
 
 #endif
