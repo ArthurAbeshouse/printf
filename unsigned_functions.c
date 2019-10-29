@@ -6,7 +6,7 @@
  */
 int print_binary(va_list bi)
 {
-	int a = 0, b = 0, num, arr[48];
+	int a = 0, b = 0, num, arr[48], count = 0;
 
 	num = va_arg(bi, int);
 
@@ -17,9 +17,12 @@ int print_binary(va_list bi)
 		a++;
 	}
 	for (b = a - 1; b >= 0; b--)
+	{
+		count++;
 		_putchar('0' + arr[b]);
+	}
 
-	return (b);
+	return (count);
 }
 /**
  * print_lil_hex - prints hex with lowercase letters
