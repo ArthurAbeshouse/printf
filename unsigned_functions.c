@@ -7,22 +7,29 @@
 
 int print_binary(va_list bi)
 {
-	int a = 0, b = 0, num, arr[48], count = 0;
+	unsigned int count = 0, b = 0, num, arr[32];
 
 	num = va_arg(bi, int);
 
-	while (num > 0)
+	if (num < 1)
 	{
-		arr[a] = num % 2;
-		num = num / 2;
-		a++;
-	}
-	for (b = a - 1; b >= 0; b--)
-	{
-		_putchar('0' + arr[b]);
+		_putchar(48);
 		count++;
+		return (count);
 	}
+	else
+	{
+		while (num > 0)
+		{
+			arr[count] = num % 2;
+			num = num / 2;
+			count++;
+		}
+		for (b = count - 1; b > 0; b--)
+			_putchar('0' + arr[b]);
 
+		_putchar('0' + arr[b]);
+	}
 	return (count);
 }
 /**
