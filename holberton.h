@@ -29,5 +29,5 @@ int print_octal(va_list n);
 int print_unsigned(va_list n);
 int print_rot13(va_list n);
 int print_percent(va_list n);
-int print_special_string (va_list n);
+
 #endif
