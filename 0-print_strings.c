@@ -18,7 +18,7 @@ int print_char(va_list c)
  */
 int print_string(va_list s)
 {
-	int i = 0;
+	int i = 0, count = 0;
 	char *string_to_print;
 
 	string_to_print = va_arg(s, char *);
@@ -26,12 +26,12 @@ int print_string(va_list s)
 	if (string_to_print == NULL)
 		string_to_print = "(null)";
 
-	while (string_to_print[i] != '\0')
+	while (string_to_print[i])
 	{
-		_putchar(string_to_print[i]);
+		count += _putchar(string_to_print[i]);
 		i++;
 	}
-	return (i);
+	return (count);
 }
 /**
  * print_percent - prints a percent sign
