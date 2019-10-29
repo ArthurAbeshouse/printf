@@ -29,7 +29,7 @@ int print_lil_hex(va_list arg)
 {
 	unsigned int numToConvert = va_arg(arg, unsigned int);
 	char arrayHex[48];
-	int i = 0, temp = 0, count = 0;
+	int i = 0, temp = 0, count = 0, j = 0;
 
 	while (numToConvert != 0)
 	{
@@ -51,7 +51,7 @@ int print_lil_hex(va_list arg)
 	}
 	count = 0;
 
-	for (int j = i - 1 ; j >= 0 ; j--)
+	for (j = i - 1 ; j >= 0 ; j--)
 	{
 		_putchar(arrayHex[j]);
 		count++;
@@ -67,7 +67,7 @@ int print_big_hex(va_list arg)
 {
 	unsigned int numToConvert = va_arg(arg, unsigned int);
 	char arrayHex[48];
-	int i = 0, temp = 0, count = 0;
+	int i = 0, temp = 0, count = 0, j = 0;
 
 	while (numToConvert != 0)
 	{
@@ -88,7 +88,7 @@ int print_big_hex(va_list arg)
 	}
 	count = 0;
 
-	for (int j = i - 1 ; j >= 0 ; j--)
+	for (j = i - 1 ; j >= 0 ; j--)
 	{
 		_putchar(arrayHex[j]);
 		count++;
