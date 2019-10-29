@@ -1,6 +1,9 @@
 #include "holberton.h"
-
-
+/**
+ * print_octal - Prints in octal
+ * @n: Variable Passed in
+ * Return: Always 1
+ */
 int print_octal(va_list n)
 {
 	unsigned int toOctal = va_arg(n, unsigned int);

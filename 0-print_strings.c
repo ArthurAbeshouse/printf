@@ -42,29 +42,3 @@ int print_percent(va_list arg __attribute__((unused)))
 	_putchar('%');
 	return (1);
 }
-
-int print_special_string (va_list arg)
-{
-
-	char *string_to_print;
-	int i = 0;
-
-	string_to_print = va_arg(arg, char *);
-
-	while (string_to_print[i] != '\0')
-	{
-		if ((string_to_print[i] < 32 && string_to_print[i] > 0) || string_to_print[i] >= 127)
-		{
-			_putchar('\\');
-			_putchar('x');
-			print_big_hex(arg);
-			i++;
-		}
-		else
-		{
-			_putchar(string_to_print[i]);
-			i++;
-		}
-	}
-	return (1);
-}

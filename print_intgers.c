@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_number - function to prints integers and decimals
+ * print_integer - function to prints integers and decimals
  *
  * @args: int type
  * Return: return integer/decimal values

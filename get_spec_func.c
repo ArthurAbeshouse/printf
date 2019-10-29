@@ -17,15 +17,15 @@ int (*get_spec_func(char spec))(va_list)
 		{"i", print_integer},
 		{"d", print_integer},
 		{"s", print_string},
-	//	{"S", print_special_string},
+	/*	{"S", print_special_string}, */
 		{"R", print_rot13},
 		{"r", print_reverse},
-	//	{"p", print_pointer},
+	/*	{"p", print_pointer}, */
 		{"b", print_binary},
 		{"u", print_unsigned},
 /*		{"o", print_octal}, */
 		{"x", print_lil_hex},
-		{"X", print_big_hex}, 
+		{"X", print_big_hex},
 		{NULL, NULL}
 	};
 
