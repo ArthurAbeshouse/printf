@@ -7,7 +7,7 @@ int print_octal(va_list n)
 
 	int octalStore[48];
 	int i = 0, count = 0;
-	int j, oct;
+	int j;
 
 	while (toOctal != 0)
 	{
@@ -21,4 +21,5 @@ int print_octal(va_list n)
 		_putchar(octalStore[j]);
 		count++;
 	}
+	return (1);
 }
