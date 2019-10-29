@@ -80,3 +80,29 @@ int print_big_hex(va_list arg)
         }
         return(count);
 }
+
+int print_unsigned(va_list arg)
+{
+	int count = 0;
+	unsigned int num = va_arg(arg, unsigned int);
+	int digit, sum = 0, last;
+	int divis = 1000000000;
+
+	while (divis > 1)
+	{
+		digit = (num / divis) % 10;
+		sum += digit;
+		if (sum != 0)
+		{
+			_putchar(digit + '0');
+			count++;
+		}
+		divis = divis / 10;
+	}
+
+	last = num % 10;
+	_putchar(last + '0');
+	count++;
+
+	return (count);
+}
