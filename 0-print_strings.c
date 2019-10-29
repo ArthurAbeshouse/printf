@@ -6,13 +6,11 @@
  */
 int print_char(va_list c)
 {
-	char _chartoprint;
+	int _chartoprint = va_arg(c, int);
 
-	_chartoprint = va_arg(c, int);
-
-	_putchar(_chartoprint);
-	return (1);
+	return (_putchar(_chartoprint));
 }
+
 /**
  * print_string - prints a string
  * @s: Stirng to print
@@ -20,10 +18,13 @@ int print_char(va_list c)
  */
 int print_string(va_list s)
 {
-	char *string_to_print;
 	int i = 0;
+	char *string_to_print;
 
 	string_to_print = va_arg(s, char *);
+
+	if (string_to_print == NULL)
+		string_to_print = "(null)";
 
 	while (string_to_print[i] != '\0')
 	{
