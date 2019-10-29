@@ -1,0 +1,59 @@
+.Dd 10/29/19               \" DATE
+.Dt _printf(1)     \" Program name and manual section number
+.Os
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm _printf
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd prints a string based on the forma specifier
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op ("%scdiuoxXrR, any_text")              \" [-abcd]
+.Ar arg0                 \" Underlined argument - use .Ar anywhere to underline
+arg2 ...
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+_printf takes in a string FORMAT, and prints out the ARGUMENTS based on the format the function was given. 
+.Pp                      \" Inserts a space
+
+.Nm
+a format specifier % to tell what data type to format the string with
+.Bl -tag -width -indent  \" Begins a tagged list
+.El                      \" Ends the list
+.Pp
+Formats and what they each do
+.Bl -tag -width -indent  \" Differs from above in tag removed
+.It Fl %d                 \"-a flag as a list item
+Description of -a flag
+.It Fl %i
+Description of -b flag
+.It Fl %c
+Prints out a single character
+.It Fl %s
+Prints out a string
+.It Fl %x
+Prints out an unsigned hexadecimal number with lowercase letters
+.It Fl %X
+Prints out an unsigned hexadecimal number with capital letters
+.It Fl %u
+Prints an unsigned integer
+.It Fl %o
+Prints out an unsigned octal number
+.It Fl %b
+Converts to to binary 
+.It Fl %r
+Reverses any string given to _printf
+.It Fl %R
+Preforms rot13 on any string given to
+.Nm
+.It Fl %%
+Prints a %
+.El                      \" Ends the list
+.Pp
+.Sh EXAMPLE
+To print a string out you would type "_printf("%s", "String here or variable")" and it would output the entire string.
+.Sh AUTHOR
+Created by Arthur Abeshouse and Ezra Nobrega for Holberton School
+.Sh BUG REPORTING
+Send a message on Github to either eNobreg or ArthurAbeshouse
+
+.Sh SEE ALSO
+Nothing here, but look at the actual printf because it works much better, and is more feature complete then this one
