@@ -6,6 +6,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * struct format - A data type that stores functions
+ * @op: char type
+ * @f: function pointer
+ */
+
 typedef struct format
 {
 	char *op;
