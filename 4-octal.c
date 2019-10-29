@@ -2,7 +2,7 @@
 /**
  * print_octal - Prints in octal
  * @n: Variable Passed in
- * Return: Always 1
+ * Return: Always j
  */
 
 int print_octal(va_list n)
