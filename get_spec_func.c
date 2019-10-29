@@ -13,13 +13,13 @@ int (*get_spec_func(char spec))(va_list)
 
 	spec_t type[] = {
 		{"c", print_char},
-		//{"%", print_percent},
+		{"%", print_percent},
 		{"i", print_integer},
 		{"d", print_integer},
 		{"s", print_string},
 	//	{"S", print_special_string},
 		{"R", print_rot13},
-//		{"r", print_reverse},
+		{"r", print_reverse},
 	//	{"p", print_pointer},
 		{"b", print_binary},
 		{"u", print_unsigned},

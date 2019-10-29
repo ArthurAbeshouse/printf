@@ -7,7 +7,7 @@
  * Return: return integer/decimal values
  */
 
-int print_number(va_list args)
+int print_integer(va_list args)
 {
 	int digit, sum = 0, last;
 	int num = va_arg(args, int);
