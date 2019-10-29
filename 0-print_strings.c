@@ -38,11 +38,9 @@ int print_string(va_list s)
  * @arg: Is unused
  * Return: Always 1
  */
-int print_percent(va_list arg __attribute__((unused)))
+int print_percent(va_list __attribute__((unused)) arg)
 {
-	char percent = '%';
-
-	_putchar(percent);
+	_putchar('%');
 
 	return (1);
 }
