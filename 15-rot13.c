@@ -1,26 +1,34 @@
 #include "holberton.h"
 
 
-void *rot13(const char *f, va_list str)
-{
+int print_rot13(va_list str)
+{	
+	int len = 0, i, j;
+	char *copy;
 	char *stringTocheck;
-	va_start(str, str);
 
-	stringTocheck = va_arg(str, char*);
-	int i, j;
+	stringTocheck = va_arg(str, char *);
+
+	while (stringTocheck[len++])
+		;
+	copy = malloc(sizeof(char *) * len);
+	for (i = 0; i <= len; i++)
+		copy[i] = stringTocheck[i];
+
 	int count = 0;
 	char input[80] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[80] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 
-	for (i = 0; stringTocheck[i] != '\0'; i++)
+	for (i = 0; copy[i] != '\0'; i++)
 		for (j = 0; input[j] != '\0'; j++)
-			if (stringTocheck[i] == input[j])
+			if (copy[i] == input[j])
 			{
-				stringTocheck[i] = output[j];
-				_putchar(stringTocheck[i]);
+				copy[i] = output[j];
+				_putchar(copy[i]);
 				count++;
-				break;	
+				break;
 			}
-
+	free(copy);
+	return(count);
 }
