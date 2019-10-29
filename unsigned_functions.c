@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+ * print_binary - receives an int to convert
+ * @bi: Argument to convert
+ * Return: b as the number of arguments printed
+ */
 int print_binary(va_list bi)
 {
 	int a = 0, b = 0, num, arr[48];
@@ -16,13 +20,18 @@ int print_binary(va_list bi)
 	_putchar('0' + arr[b]);
 	return(b);
 }
-
+/**
+ * print_lil_hex - prints hex with lowercase letters
+ * @arg: Arguments passed to convert
+ * Return: Count of characters printed
+ */
 int print_lil_hex(va_list arg)
 {
 	unsigned int numToConvert = va_arg(arg, unsigned int);
-
 	char arrayHex[48];
-	int i = 0, j = 0;
+
+	int i = 0;
+
 	while (numToConvert != 0)
 	{
 		int temp = 0;
@@ -48,13 +57,18 @@ int print_lil_hex(va_list arg)
 	}
 	return(count);
 }
-
+/**
+ * print_big_hex - Prints an argument as hex with uppercase letters
+ * @arg: Arguments to convert
+ * Return: Amount of characters printed
+ */
 int print_big_hex(va_list arg)
 {
         unsigned int numToConvert = va_arg(arg, unsigned int);
-
         char arrayHex[48];
-        int i = 0, j = 0;
+
+        int i = 0;
+
         while (numToConvert != 0)
         {
                 int temp = 0;
@@ -80,7 +94,11 @@ int print_big_hex(va_list arg)
         }
         return(count);
 }
-
+/**
+ * print_unsigned - prints an unsigned integer value
+ * @arg: Arguments to print
+ * Return: Amount of arguments printed
+ */
 int print_unsigned(va_list arg)
 {
 	int count = 0;

@@ -1,16 +1,24 @@
 #include "holberton.h"
-
+/**
+ * print_char - prints a single character
+ * @c: character to print
+ * Return: Always 1
+ */
 int print_char(va_list c)
 {
 	char _chartoprint;
+
 	_chartoprint = va_arg(c, int);
 	int i = 0;
 
 	_putchar(_chartoprint);
-	i++;
-	return(i);
+	return (1);
 }
-
+/**
+ * print_string - prints a string
+ * @s: Stirng to print
+ * Return: Number of characters printed
+ */
 int print_string(va_list s)
 {
 	char *string_to_print;
@@ -24,4 +32,14 @@ int print_string(va_list s)
 		i++;
 	}
 	return (i);
+}
+/**
+ * print_percent - prints a percent sign
+ * @arg: Is unused
+ * Return: Always 1
+ */
+int print_percent(va_list arg __attribute__((unused)))
+{
+	_putchar('%');
+	return (1);
 }
