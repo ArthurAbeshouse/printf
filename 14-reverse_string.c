@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <string.h>
 /**
  * reverse_string - reverses a string
  * @s: String to reverse
@@ -8,32 +8,29 @@
 
 int print_reverse(va_list arg)
 {
-	char *copy;
-	char *str_to_rev;
-	char str[48];
-	int a = 0, b = 0, i = 0, j = 0;
+  int count = 0;
+  int length = 0;
+  char *string = va_arg(arg, char *);
 
-	str_to_rev = va_arg(arg, char *);
+  if (string == NULL)
+    {
+      write(1, "(null)", 6);
+      return (6);
+    }
 
-	while (str_to_rev[a++])
-		;
-	copy = malloc(sizeof(char *) * a);
-	for (b = 0; b <= a; b++)
-		copy[b] = str_to_rev[b];
+  while (string[length] != '\0')
+    {
+      length++;
+      count++;
+    }
 
-	while (*(copy + i) != 0)
-	{
-		str[i] = *(copy + i);
-		i++;
-	}
-	j = i - 1;
-	i = 0;
-	while (j >= 0)
-	{
-		*(copy + j) = str[i];
-		j--;
-		i++;
-	}
-	free(copy);
-	return (i);
+  length--;
+
+  while (length >= 0)
+    {
+      _putchar(string[length]);
+      length--;
+    }
+
+  return (count);
 }
