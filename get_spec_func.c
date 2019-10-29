@@ -23,7 +23,7 @@ int (*get_spec_func(char spec))(va_list)
 	/*	{"p", print_pointer}, */
 		{"b", print_binary},
 		{"u", print_unsigned},
-/*		{"o", print_octal}, */
+		{"o", print_octal},
 		{"x", print_lil_hex},
 		{"X", print_big_hex},
 		{NULL, NULL}
@@ -34,6 +34,5 @@ int (*get_spec_func(char spec))(va_list)
 		if (spec == *type[i].op)
 			return (type[i].f);
 	}
-
 	return (NULL);
 }

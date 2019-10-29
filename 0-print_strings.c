@@ -6,13 +6,11 @@
  */
 int print_char(va_list c)
 {
-	char _chartoprint;
+	int _chartoprint = va_arg(c, int);
 
-	_chartoprint = va_arg(c, int);
-
-	_putchar(_chartoprint);
-	return (1);
+	return (_putchar(_chartoprint));
 }
+
 /**
  * print_string - prints a string
  * @s: Stirng to print
@@ -20,17 +18,20 @@ int print_char(va_list c)
  */
 int print_string(va_list s)
 {
+	int i = 0, count = 0;
 	char *string_to_print;
-	int i = 0;
 
 	string_to_print = va_arg(s, char *);
 
-	while (string_to_print[i] != '\0')
+	if (string_to_print == NULL)
+		string_to_print = "(null)";
+
+	while (string_to_print[i])
 	{
-		_putchar(string_to_print[i]);
+		count += _putchar(string_to_print[i]);
 		i++;
 	}
-	return (i);
+	return (count);
 }
 /**
  * print_percent - prints a percent sign
@@ -39,6 +40,9 @@ int print_string(va_list s)
  */
 int print_percent(va_list arg __attribute__((unused)))
 {
-	_putchar('%');
+	char percent = '%';
+
+	_putchar(percent);
+
 	return (1);
 }

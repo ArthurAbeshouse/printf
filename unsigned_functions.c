@@ -4,11 +4,13 @@
  * @bi: Argument to convert
  * Return: b as the number of arguments printed
  */
+
 int print_binary(va_list bi)
 {
-	int a = 0, b = 0, num, arr[48];
+	int a = 0, b = 0, num, arr[48], count = 0;
 
 	num = va_arg(bi, int);
+
 	while (num > 0)
 	{
 		arr[a] = num % 2;
@@ -16,9 +18,12 @@ int print_binary(va_list bi)
 		a++;
 	}
 	for (b = a - 1; b >= 0; b--)
+	{
 		_putchar('0' + arr[b]);
-	_putchar('0' + arr[b]);
-	return (b);
+		count++;
+	}
+
+	return (count);
 }
 /**
  * print_lil_hex - prints hex with lowercase letters
