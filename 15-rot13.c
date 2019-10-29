@@ -6,9 +6,11 @@
  */
 int print_rot13(va_list str)
 {
-	int len = 0, i, j;
+	int len = 0, i, j, count = 0;
 	char *copy;
 	char *stringTocheck;
+	char input[80] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        char output[80] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	stringTocheck = va_arg(str, char *);
 
@@ -19,11 +21,6 @@ int print_rot13(va_list str)
 	{
 		copy[i] = stringTocheck[i];
 	}
-
-	int count = 0;
-	char input[80] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char output[80] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
 
 	for (i = 0; copy[i] != '\0'; i++)
 		for (j = 0; input[j] != '\0'; j++)
