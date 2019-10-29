@@ -11,7 +11,7 @@ int print_binary(va_list bi)
 		num = num/2;
 		a++;
 	}
-	for (int b = a - 1; b >= 0; b--)
+	for (b = a - 1; b >= 0; b--)
 		_putchar('0' + arr[b]);
 	_putchar('0' + arr[b]);
 	return(b);
@@ -22,7 +22,7 @@ int print_lil_hex(va_list arg)
 	unsigned int numToConvert = va_arg(arg, unsigned int);
 
 	char arrayHex[48];
-	int i = 0;
+	int i = 0, j = 0;
 	while (numToConvert != 0)
 	{
 		int temp = 0;
@@ -41,7 +41,7 @@ int print_lil_hex(va_list arg)
 
 	}
 	int count = 0;
-	for (int j = i - 1 ; j >= 0 ; j--)
+	for (j = i - 1 ; j >= 0 ; j--)
 	{
 		_putchar(arrayHex[j]);
 		count++;
@@ -54,7 +54,7 @@ int print_big_hex(va_list arg)
         unsigned int numToConvert = va_arg(arg, unsigned int);
 
         char arrayHex[48];
-        int i = 0;
+        int i = 0, j = 0;
         while (numToConvert != 0)
         {
                 int temp = 0;
@@ -73,7 +73,7 @@ int print_big_hex(va_list arg)
 
 	}
         int count = 0;
-        for (int j = i - 1 ; j >= 0 ; j--)
+        for (j = i - 1 ; j >= 0 ; j--)
         {
                 _putchar(arrayHex[j]);
                 count++;
