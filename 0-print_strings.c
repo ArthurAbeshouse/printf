@@ -40,6 +40,9 @@ int print_string(va_list s)
  */
 int print_percent(va_list arg __attribute__((unused)))
 {
-	_putchar('%');
+	char percent = '%';
+
+	_putchar(percent);
+
 	return (1);
 }
