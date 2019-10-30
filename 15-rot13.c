@@ -6,35 +6,33 @@
  */
 int print_rot13(va_list str)
 {
-	int len = 0, i, j, count = 0;
-	char *copy;
+	int count = 0;
+	unsigned int i, j;
 	char *stringTocheck;
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	stringTocheck = va_arg(str, char *);
+
 	if (stringTocheck == NULL)
 		stringTocheck = "(null)";
 
-	while (stringTocheck[len++])
-		;
-	copy = malloc(sizeof(char *) * len);
-	for (i = 0; i <= len; i++)
+	for (i = 0; stringTocheck[i]; i++)
 	{
-		copy[i] = stringTocheck[i];
-	}
-
-	for (i = 0; copy[i] != '\0'; i++)
-		for (j = 0; input[j] != '\0'; j++)
-			if (copy[i] == input[j])
+		for (j = 0; input[j]; j++)
+		{
+			if (input[j] == stringTocheck[i])
 			{
-				copy[i] = output[j];
-				_putchar(copy[i]);
+				_putchar(output[j]);
 				count++;
-				if (copy[i + 1] == ' ')
-					_putchar(' ');
 				break;
 			}
-	free(copy);
+		}
+		if (!input[j])
+		{
+			_putchar(stringTocheck[i]);
+			count++;
+		}
+	}
 	return (count);
 }
