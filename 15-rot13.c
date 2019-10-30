@@ -9,10 +9,12 @@ int print_rot13(va_list str)
 	int len = 0, i, j, count = 0;
 	char *copy;
 	char *stringTocheck;
-	char input[80] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char output[80] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	stringTocheck = va_arg(str, char *);
+	if (stringTocheck == NULL)
+		stringTocheck = "(null)";
 
 	while (stringTocheck[len++])
 		;
