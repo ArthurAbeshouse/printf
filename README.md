@@ -8,23 +8,23 @@ This is the man project file and master branch of the recreation of the printf()
 
 Some example of a few of the formats that'll be able to be printed inside our function, _printf.
 
-``c
+```c
 _printf("%s", "I am string"); /* The 's' format specifier prints any string you input */
 Output: I am string
-``
+```
 
 This function is a default in the regular printf(), but in our _printf there are a couple custom conversions.
 
-``c
+```c
 _printf("%r", "Hello"); /* The 'r' format specifier prints any string, but in reverse */
 Output: olleH
-``
+```
 
-``c
+```c
 int var = 2560
 _printf("%i", var); /* The 'i' format specifier prints any integer value */
 Output: 2560
-``
+```
 
 Neither of these are part of the regular printf function in the standard library. These are the rest of the functions within _printf.
 
