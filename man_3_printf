@@ -1,55 +1,131 @@
-.Dd 10/29/19               \" DATE
-.Dt _printf(1)     \" Program name and manual section number
-.Os
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd 8/4/10               \" DATE
+.Dt _printf 3      \" Program name and manual section number
+.Os Linux
 .Sh NAME                 \" Section Header - required - don't modify
 .Nm _printf
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.Nm _printf(),
+.Nm Yet another name for the same program.
 .\" Use .Nm macro to designate other names for the documented program.
-.Nd prints a string based on the forma specifier
+.Nd This line parsed for whatis database.
 .Sh SYNOPSIS             \" Section Header - required - don't modify
-.Nm
-.Op ("%scdiuoxXrR, any_text")              \" [-abcd]
-.Ar arg0                 \" Underlined argument - use .Ar anywhere to underline
-arg2 ...
-.Sh DESCRIPTION          \" Section Header - required - don't modify
-_printf takes in a string FORMAT, and prints out the ARGUMENTS based on the format the function was given. 
-.Pp                      \" Inserts a space
+#include "holberton.h"
+
 
 .Nm
-a format specifier % to tell what data type to format the string with
+.Ar ("const char *format", ...
+);                 \" Underlined argument - use .Ar anywhere to underline
+	                 \" Arguments
+.Sh DESCRIPTION 
+
+
+\" Section Header - required - don't modify
+This function is  a standalone function, it will write any string you give it to stdout in a variety of ways
+according to whatever
+.I format
+specifier it has been given. The format specifier takes the string, and changes how it will be printed out.
+The function will do this for every single argument that it has been given.
+
+
+.Ar The Format String:
+
+The format string is made up of both regular characters, such as the alphabet and numbers, and special characters that define a following normal character as a special format.
+In short the format string is made up of what you want to print, and links to things you want to print.
+The program locates these specific format specifiers by scanning for the character '%' inside the format string.
+
+
 .Bl -tag -width -indent  \" Begins a tagged list
 .El                      \" Ends the list
 .Pp
+
+
+
 Formats and what they each do
+
+_____________________________
 .Bl -tag -width -indent  \" Differs from above in tag removed
-.It Fl %d                 \"-a flag as a list item
-Description of -a flag
-.It Fl %i
-Description of -b flag
-.It Fl %c
-Prints out a single character
-.It Fl %s
-Prints out a string
-.It Fl %x
-Prints out an unsigned hexadecimal number with lowercase letters
-.It Fl %X
-Prints out an unsigned hexadecimal number with capital letters
-.It Fl %u
-Prints an unsigned integer
-.It Fl %o
-Prints out an unsigned octal number
+
+.It Fl %d, %i                 \"-a flag as a list item
+
+Takes a signed integer and prints it out to stdout. In this function there is no precision or width modifiers, 
+so it simply prints out a integer to stdout.
+
+
+.It Fl %c, %s
+
+These two format specifiers accept a character (c) and a character pointer, or string (s) argument.
+These options allow the user to specify printing out either a single character, or entire string of characters to stdout.
+
+
+.It Fl %X, %x, %u, %o
+
+All these formatters accept an unsigned int as their base parameter. The unsigned int is converted into octal with (O).
+It is converted into a hexadecimal number with the (x) and (X) formatters. The difference being the capital
+X will print hex with capital letters, and the lowercase x will print with lowercase letters. Finally the (u) option will simply print out the unsigned integer without doing any conversion to it whatsoever
+
+
 .It Fl %b
-Converts to to binary 
-.It Fl %r
-Reverses any string given to _printf
-.It Fl %R
-Preforms rot13 on any string given to
+
+
+This format specifers calls a function that accepts an unsigned int. This format specifiers will take the unsigned int and convert it into a binary number, before printing it character by character to stdout.
+
+
+.It Fl %r,
+
+
+This format specifier expects a character pointer input, or a string. The specifier
+takes the string, and reverses it letter by letter by printing from the back forward to stdout.
+
+
+.It Fl %(R)
+
+
+This format specifier accepts  a character pointer, and rotates each element of that pointer 
+by 13 character, printing out whatever character is on the 14th position after to stdout.
+
+
 .Nm
 .It Fl %%
-Prints a %
+
+
+Prints a % to stdout.
 .El                      \" Ends the list
 .Pp
 .Sh EXAMPLE
+
+
 To print a string out you would type "_printf("%s", "String here or variable")" and it would output the entire string.
+
+
+The entire program to print a single character using the given function would be as follows:
+
+_________________________________________
+
+
+#include "holberton.h"
+
+int print_char(va_list c)
+
+
+{
+
+
+int _chartoprint = va_arg(c, int);
+
+return (_putchar(_chartoprint));
+
+
+}
+
+__________________________________________
+
+
 .Sh AUTHOR
 Created by Arthur Abeshouse and Ezra Nobrega for Holberton School
 .Sh BUG REPORTING
@@ -57,3 +133,4 @@ Send a message on Github to either eNobreg or ArthurAbeshouse
 
 .Sh SEE ALSO
 Nothing here, but look at the actual printf because it works much better, and is more feature complete then this one
+
