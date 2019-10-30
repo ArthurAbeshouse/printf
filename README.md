@@ -51,58 +51,63 @@ Neither of these are part of the regular printf function in the standard library
 
 - _printf
   - This function does all the calling of the other functions in the program, as well as checks for any NULL values that may disrupt the program. The function searches for the format specifier %, then calls on "get_spec_fun" to find the exact format specifier.
-  
+
 #### File 0.5: get_spec_fun.c
-  
-  - get_spec_fun
-    - This function takes a format specifier from _printf, and returns a function pointer to whatever function within it's local struct matches the format specifier.
-	
+
+- get_spec_fun
+  - This function takes a format specifier from _printf, and returns a function pointer to whatever function within it's local struct matches the format specifier.
+
 #### File 1: Unsigned_Functions.c
-	
-	This file contains all the conversions for the unsigned values we are given:
-	
-	- print_lil_hex
-		- This function prints an unsigned hexadecimal value, from an unsigned int with lowercase letters
-	- print_big_hex
-		- This functions prints a unsigned hexadecimal value with uppercase letters
-	- print_unsigned
-		- This function prints any unsigned integer it is given.
-	- print_binary
-		- This function converts an unsigned integer into a binary value
-			
+
+This file contains all the conversions for the unsigned values we are given:
+
+- print_lil_hex
+  - This function prints an unsigned hexadecimal value, from an unsigned int with lowercase letters
+- print_big_hex
+  - This functions prints a unsigned hexadecimal value with uppercase letters
+- print_unsigned
+  - This function prints any unsigned integer it is given.
+- print_binary
+  - This function converts an unsigned integer into a binary value
+
 #### File 2: 0-Print_Strings.c
-			
-	This file contains every function that has to do with printing a string or character.
-			
-	- print_percent
-		- Prints a percent sign when the format specifier is %%
-	- print_char
-		- Prints a single character that is passed into the function
-	- print_string
-		- Prints an entire string that is passed into the function
-				  
+
+This file contains every function that has to do with printing a string or character.
+
+- print_percent
+  - Prints a percent sign when the format specifier is %%
+- print_char
+  - Prints a single character that is passed into the function
+- print_string
+  - Prints an entire string that is passed into the function
+
 #### File 3: 4-octal.c
-	- print_octal
-		- This function convers any unsigned integer into octal and prints out.
-			
+
+- print_octal
+  - This function convers any unsigned integer into octal and prints out.
+
 #### File 4: 14-reverse_strings.c
-	- print_reverse
-		- This function takes in any string, and return the same string in reverse.
-					  
+
+- print_reverse
+  - This function takes in any string, and return the same string in reverse.
+
 #### File 5: 15-rot13.c
-	- print_rot13
-		- Takes in ant string, and returns it with the letters shifted thirteen characters
-						
+
+- print_rot13
+  - Takes in ant string, and returns it with the letters shifted thirteen characters
+
 #### File 6: print_integers.c
-		- print_integer
-			- This function prints out any integer value it is given, no matter the size
+
+- print_integer
+  - This function prints out any integer value it is given, no matter the size
 
 #### Other Files:
-	- _putchar.c
-		- contains _putchar, a function that prints a single character
-	- holberton.h
-		- The header file for the project, it contains the data type for the pointer functions, as well as function prototypes for every function used.
-							  
+
+- _putchar.c
+  - contains _putchar, a function that prints a single character
+- holberton.h
+  - The header file for the project, it contains the data type for the pointer functions, as well as function prototypes for every function used.
+
 ## Contributors
-		Arthur Abeshouse
-		Ezra Nobrega`
+Arthur Abeshouse
+Ezra Nobrega
